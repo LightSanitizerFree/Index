@@ -1,0 +1,1620 @@
+
+    
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="google-site-verification" content="gIYbUr7Z5tkijPE8SCR06S77Tfv-1zCZwNmKHAHGO1o">
+        <meta charset="utf-8"><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"de79bc54f6",applicationID:"117809743"};window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var i=n[t]={exports:{}};e[t][0].call(i.exports,function(n){var i=e[t][1][n];return r(i||n)},i,i.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<t.length;i++)r(t[i]);return r}({1:[function(e,n,t){function r(){}function i(e,n,t){return function(){return o(e,[u.now()].concat(f(arguments)),n?null:this,t),n?void 0:this}}var o=e("handle"),a=e(4),f=e(5),c=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",d=l+"ixn-";a(p,function(e,n){s[n]=i(l+n,!0,"api")}),s.addPageAction=i(l+"addPageAction",!0),s.setCurrentRouteName=i(l+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,i="function"==typeof n;return o(d+"tracer",[u.now(),e,t],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],t),i)try{return n.apply(this,arguments)}catch(e){throw c.emit("fn-err",[arguments,this,e],t),e}finally{c.emit("fn-end",[u.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=i(d+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),o("err",[e,u.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){var t=e.getEntries();t.forEach(function(e){"first-paint"===e.name?c("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&&c("timing",["fcp",Math.floor(e.startTime)])})}function i(e,n){var t=e.getEntries();t.length>0&&c("lcp",[t[t.length-1]])}function o(e){if(e instanceof s&&!l){var n,t=Math.round(e.timeStamp);n=t>1e12?Date.now()-t:u.now()-t,l=!0,c("timing",["fi",t,{type:e.type,fid:n}])}}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var a,f,c=e("handle"),u=e("loader"),s=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){a=new PerformanceObserver(r),f=new PerformanceObserver(i);try{a.observe({entryTypes:["paint"]}),f.observe({entryTypes:["largest-contentful-paint"]})}catch(p){}}if("addEventListener"in document){var l=!1,d=["click","keydown","mousedown","pointerdown","touchstart"];d.forEach(function(e){document.addEventListener(e,o,!1)})}}},{}],3:[function(e,n,t){function r(e,n){if(!i)return!1;if(e!==i)return!1;if(!n)return!0;if(!o)return!1;for(var t=o.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}n.exports={agent:i,version:o,match:r}},{}],4:[function(e,n,t){function r(e,n){var t=[],r="",o=0;for(r in e)i.call(e,r)&&(t[o]=n(r,e[r]),o+=1);return t}var i=Object.prototype.hasOwnProperty;n.exports=r},{}],5:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,i=t-n||0,o=Array(i<0?0:i);++r<i;)o[r]=e[n+r];return o}n.exports=r},{}],6:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function i(e){function n(e){return e&&e instanceof r?e:e?c(e,f,o):o()}function t(t,r,i,o){if(!l.aborted||o){e&&e(t,r,i);for(var a=n(i),f=v(t),c=f.length,u=0;u<c;u++)f[u].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function d(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||i(t)}function w(e,n){u(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:d,addEventListener:d,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&&(l.aborted=!0,s=l.backlog={})}var f="nr@context",c=e("gos"),u=e(4),s={},p={},l=n.exports=i();l.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(i.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[n]=r,r}var i=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){i.buffer([e],r),i.emit(e,n,t)}var i=e("ee").get("handle");n.exports=r,r.ee=i},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=E.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();u(y,function(n,t){e[n]||(e[n]=t)}),c("mark",["onload",a()+E.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function i(){"complete"===d.readyState&&o()}function o(){c("mark",["domContent",a()+E.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(f=Math.max((new Date).getTime(),f))-E.offset}var f=(new Date).getTime(),c=e("handle"),u=e(4),s=e("ee"),p=e(3),l=window,d=l.document,m="addEventListener",v="attachEvent",g=l.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:l.setImmediate,CT:clearTimeout,XHR:g,REQ:l.Request,EV:l.Event,PR:l.Promise,MO:l.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1167.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),E=n.exports={offset:f,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),e(2),d[m]?(d[m]("DOMContentLoaded",o,!1),l[m]("load",r,!1)):(d[v]("onreadystatechange",i),l[v]("onload",r)),c("mark",["firstbyte",f],null,"api");var x=0,O=e(6)},{}],"wrap-function":[function(e,n,t){function r(e){return!(e&&e instanceof Function&&e.apply&&!e[a])}var i=e("ee"),o=e(5),a="nr@original",f=Object.prototype.hasOwnProperty,c=!1;n.exports=function(e,n){function t(e,n,t,i){function nrWrapper(){var r,a,f,c;try{a=this,r=o(arguments),f="function"==typeof t?t(r,a):t||{}}catch(u){l([u,"",[r,a,i],f])}s(n+"start",[r,a,i],f);try{return c=e.apply(a,r)}catch(p){throw s(n+"err",[r,a,p],f),p}finally{s(n+"end",[r,a,c],f)}}return r(e)?e:(n||(n=""),nrWrapper[a]=e,p(e,nrWrapper),nrWrapper)}function u(e,n,i,o){i||(i="");var a,f,c,u="-"===i.charAt(0);for(c=0;c<n.length;c++)f=n[c],a=e[f],r(a)||(e[f]=t(a,u?f+i:i,o,f))}function s(t,r,i){if(!c||n){var o=c;c=!0;try{e.emit(t,r,i,n)}catch(a){l([a,t,r,i])}c=o}}function p(e,n){if(Object.defineProperty&&Object.keys)try{var t=Object.keys(e);return t.forEach(function(t){Object.defineProperty(n,t,{get:function(){return e[t]},set:function(n){return e[t]=n,n}})}),n}catch(r){l([r])}for(var i in e)f.call(e,i)&&(n[i]=e[i]);return n}function l(n){try{e.emit("internal-error",n)}catch(t){}}return e||(e=i),t.inPlace=u,t.flag=a,t}},{}]},{},["loader"]);</script>
+        <meta property="widitrade:productId" content="5e6f467aef286473cc756a12">
+        <meta charset="utf-8">
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="author" content="Ecomerzpro" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+        
+        <title>Light Sanitizer</title>
+
+                                    <link rel="shortcut icon" href="https://cdn.widitrade.com/favicon.ico">
+                <link rel="icon" type="image/x-icon" href="https://cdn.widitrade.com/favicon.ico" />
+                    
+        <link rel="manifest" href="manifest.json">
+
+                
+            <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://assets.widitrade.com/assets/templates/5c371797263e5ceb2d2b2225/css-combined.min.css" type="text/css" rel="stylesheet"/>
+    <link href="https://assets.widitrade.com/assets/templates/5c371797263e5ceb2d2b2225/formvalidation.min.css" type="text/css" rel="stylesheet"/>
+    <link href="https://assets.widitrade.com/assets/templates/5c371797263e5ceb2d2b2225/css-main.min.css" type="text/css" rel="stylesheet"/>
+    <link href="https://assets.widitrade.com/assets/templates/5c371797263e5ceb2d2b2225/customc.css" type="text/css" rel="stylesheet"/>
+    <link href="https://assets.widitrade.com/assets/templates/5c371797263e5ceb2d2b2225/toastr.css" type="text/css" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
+        <style>body{
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+footer{
+    background-color: #353744!important;
+    position:relative;
+}
+
+
+
+.footer{
+    font-family: 'Roboto', sans-serif;
+}
+
+.first{
+    margin-top: 11px;
+}
+
+.midle{
+    color:white;
+}
+
+
+
+.links-footer{
+    margin: 10px auto;
+    height: 30px;
+    display: flex;
+    display: flex;
+    justify-content: center;
+
+}
+
+.nt{
+    height:16px;
+}
+
+
+.title-footer-footer{
+    height:19px;
+    color:white;
+}
+
+
+
+.f-link{
+    margin-right: 10px;
+}
+
+.s-link{
+    margin-left: 10px;
+
+}
+
+.copy-footer{
+    margin: 0 auto;
+    padding-bottom: 10px;
+    color:white;
+}
+
+.mig-footer{
+    font-size: 16px;
+    color: #388a7b;
+    border-bottom: 2px solid #388a7b;
+}
+
+.images-footer{
+    margin-bottom: 4px;
+}
+
+
+.line-footer{
+    border-bottom: 2px solid #388a7b;
+    margin: 0 auto;
+    width: 7%;
+    margin-bottom: 5px;
+    margin-top: 20px;
+}
+
+
+.list-mig{
+    list-style-type: none;
+    display: inline;
+    justify-content: center;
+    text-align: center;
+    margin: 0 auto;
+    padding-left: 0px;
+}
+
+.l-mig{
+    margin: 15px;
+}
+
+
+.a-links{
+    color: white;
+    text-decoration: none;
+}
+
+
+.a-links:hover{
+    color: white;
+    text-decoration: none;
+}
+
+.a-links-m{
+    color: #388a7b;
+    text-decoration: none;
+}
+
+
+.a-links-m:hover{
+    color: #388a7b;
+    text-decoration: none;
+}
+
+
+
+
+
+
+/*------------------ medias queries ----------------------*/
+
+
+/* Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) {
+   
+}
+
+/* Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) {
+    .list-mig{
+    list-style-type: none;
+    justify-content: center;
+    display: flex;
+    margin: 0 auto;
+    height: 52px;
+    }
+}
+
+/* Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) {
+
+}
+
+/*Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) {
+
+}
+
+    
+</style>
+        
+        <style>.all-packs {
+    display: flex;
+    justify-content: flex-start;
+    height: 60px;
+    align-items: center;
+    border: 1px solid lightgray;
+    -webkit-box-shadow: 5px 4px 5px 0px rgba(217,217,217,1);
+    -moz-box-shadow: 5px 4px 5px 0px rgba(217,217,217,1);
+    box-shadow: 5px 4px 5px 0px rgba(217,217,217,1);
+    box-shadow: blue;
+    padding: 18px;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.title-packs{
+    margin-left: 5px;
+    color: #777767;
+    padding-top: 30px;
+}
+
+.text-packs{
+    font-size: 11px;
+    margin-bottom: 11px;
+}
+
+.img-pack{
+    width: 150px;
+    display: flex;
+    border: 1px solid lightgray;
+    justify-content: center;
+    -webkit-box-shadow: 5px 4px 5px 0px rgba(217,217,217,1);
+    -moz-box-shadow: 5px 4px 5px 0px rgba(217,217,217,1);
+    box-shadow: 5px 4px 5px 0px rgba(217,217,217,1);
+}
+
+
+.img-title-pack{
+    height: 121px;
+    margin-left: 248px;
+}
+
+.img-title-pack-warranty{
+    height: 50px;
+    margin-left: 240px;
+}
+
+
+/*------------------ medias queries ----------------------*/
+
+@media (min-width: 320px) and (max-width: 576px) {
+
+    .img-title-pack{
+    height: 100px;
+    margin-left: 25px;
+    }
+    
+    .img-title-pack-warranty{
+    display: none;
+    }
+    
+    .title-packs{
+    margin-left: 5px;
+    color: #777767;
+    padding-top: 30px;
+    font-size: 12px;
+    }
+}
+
+
+@media (min-width: 580px) and (max-width: 768px) {
+
+    .img-title-pack{
+    height: 100px;
+    margin-left: 25px;
+    }
+    
+    .img-title-pack-warranty{
+    height: 50px;
+    margin-left: 155px;
+    }
+    
+    .title-packs{
+    margin-left: 5px;
+    color: #777767;
+    padding-top: 30px;
+    font-size: 12px;
+    }
+}
+
+
+@media (min-width: 775px) and (max-width: 992px) {
+
+    .title-packs{
+    margin-left: 5px;
+    color: #777767;
+    padding-top: 30px;
+    font-size: 12px;
+    }
+    
+    
+    .img-title-pack{
+    height: 121px;
+    margin-left: 76px;
+    }
+    
+    .img-title-pack-warranty{
+    height: 50px;
+    margin-left: 46px;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+    
+    .img-title-pack-warranty{
+    height: 50px;
+    margin-left: 165px;
+    }
+}
+
+
+    
+</style>
+        <style>
+
+
+
+    
+</style>
+        
+
+                        
+        
+        
+
+        
+                    <meta property="og:title" content="Light Sanitizer" />
+            <meta property="og:description" content="The hand sanitizing lamp that works with UV light designed to protect you and your family." />
+            <meta property="og:image" content="https://assets.widitrade.com/assets/products/5e6f467aef286473cc756a12/product1.png" />
+        
+        <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NGZ7Z7Q');</script>
+<!-- End Google Tag Manager -->    
+
+
+<script type="text/javascript">var lck = false;</script>
+<script type="text/javascript" src="https://grabclix.com/script_include.php?id=919148"></script>
+<script type="text/javascript">if(!lck){top.location = 'https://grabclix.com/help/ablk.php?lkt=1'; }</script><noscript>Please enable JavaScript to access this page.<meta http-equiv="refresh" content="0;url=https://grabclix.com/help/enable_javascript.php?lkt=1" /></noscript>
+
+
+</head>
+    <body >
+
+            <header class="th-header">
+            
+            <img class="th-header-logo" src="https://assets.widitrade.com/assets/products/5e6f467aef286473cc756a12/productlogo.png" alt="Light Sanitizer Logo">
+    </header>
+<div class="top th-hero-section" style="background-image: url('https://assets.widitrade.com/assets/products/5e6f467aef286473cc756a12/productbackground3.jpeg');">
+    <div class="container ">
+        <div class="row">
+            <div class="col-12 col-md-4">
+                <img class="slider-img" src="https://assets.widitrade.com/assets/products/5e6f467aef286473cc756a12/product1.png"/>
+            </div>
+            <div class="col-12 col-md-8 th-hero-block-claims">
+                <div class="tableor">
+                    <ul class="list th-hero-claims">
+                        <li><i class="material-icons">check_circle</i> <h4 class="th-hero-claim-main">The portable lamp that sterilises everything within reach.</h4></li>
+                        <li><i class="material-icons">check_circle</i> UV rays: 20 seconds of light is all that is needed.</li>
+                        <li><i class="material-icons">check_circle</i> Easy to use and light. A single user-friendly ON/OFF button.</li>
+                        <li><i class="material-icons">check_circle</i> It runs on a high-performance battery. Protect your family!</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="th-wrapper">
+    <div class="container th-discounts-section">
+    <div class="row">
+    <div class="col-12">
+    <div class="th-card th-box">
+    <h2 class="th-discounts-copies th-discounts-title">SPECIAL OFFER</h2>
+<h2 class="th-discounts-copies th-discounts-pricing"><span>500</span> Light Sanitizer is available at a price of <strike>59.99$</strike> <span>0.00$</span> <em>(100% off)</em> with <b>free shipping.</b></h2>
+
+</div>
+</div>
+</div>
+</div>
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" type="text/css" rel="stylesheet"/>
+
+
+<div class="container th-checkout-section">
+    <div class="row">
+    <div class="col-12 col-md-7">
+
+    <!-- 01. Collpasible BLOCK -->
+<div class="card th-card">
+    <div class="card-header th-card-header" role="tab" id="headingOne">
+    <h4 class="th-card-item-title">
+    <i class="material-icons">assignment_turned_in</i> 1. Select a product
+</h4>
+</div>
+
+<!-- discountBar -->
+
+<div class="container">
+    <div class="row">
+        <div class="col-4">
+                        <img class="th-header-logo" src="https://assets.widitrade.com/assets/templates/5c371797263e5ceb2d2b2225/sales-en.png" alt="sales Logo">
+                        </div>
+        <div class="col-8 th-discount-applied">
+            Your discount has been applied successfully! Do not leave this page to avoid losing the discount.
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
+    <div class="card-body th-card-body">
+        <!-- FORM -->
+        <div class="row">
+            <div class="col-8 col-md-5 th-card-item">
+                <h4 class="th-card-item-title">Article</h4>
+            </div>
+            <div class="col-4 col-md-7 th-card-item">
+                <h4 class="th-card-item-title">Price</h4>
+            </div>
+                        <div class="col-6 col-md-5 th-card-item th-highlight-left">
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input id="radio-10" class="form-check-input" name="radio-group-1" checked="checked" type="radio" value="1" data-name="1 x Light Sanitizer @ 735 MAD">
+                            <font>MOST POPULAR!</font> <br/>
+                            1 x Light Sanitizer
+                    </label>
+                </div>
+            </div>
+            <div class="col-6 col-md-7 th-card-item th-highlight-right">
+                0.00$ <b>(0$/UNIT)</b>
+            </div>
+                                    <div class="col-6 col-md-5 th-card-item">
+
+            </div>
+
+                        <div class="col-6 col-md-5 th-card-item">
+
+            </div>
+
+                    </div>
+        <br>
+            
+          <form>
+      
+      
+                          <h4>Improve your Order with:</h4>
+                  
+                                      <label class="all-packs">
+              <input class="" data-toggle="buyUpShow" type="checkbox" name="buyup_1 year warranty" value="5db6cafcef28647820614ca2">
+              <input id="buyproduct-5db6cafcef28647820614ca2-2" class="form-check-input" name="buyproduct-5db6cafcef28647820614ca2" type="radio" value="1" data-name="1 x 1 year warranty @ 65 MAD" style="display: none;">
+              <h5 class="title-packs" style="white-space: nowrap;">1 Year  warranty</h5>&nbsp;&nbsp;<span style="white-space: nowrap;">0.00$</small>
+              <img src="https://assets.widitrade.com/assets/products/5db6cafcef28647820614ca2/productpackb1.png" class="img-title-pack-warranty">
+            </label>
+                  </form>
+
+
+    </div>
+</div>
+</div>
+
+    <!-- 03. Collpasible BLOCK -->
+    <div class="card th-card">
+        <div class="card-header th-card-header" role="tab" id="headingTwo">
+            <h4 class="th-card-item-title">
+                <i class="material-icons">local_shipping</i>  2. Shipping details
+            </h4>
+        </div>
+
+        <form name="contact" method="post" action="checkout/5e6f467aef286473cc756a12/index.html" id="payment-form" style="margin-bottom:0px;" class="keepFormData">
+        <div id="collapseTwo" class="collapse show" role="tabpanel" aria-labelledby="headingTwo" data-parent="#accordion">
+            <div class="card-body th-card-body">
+                <div class="form-group">
+                    <div class="form-group">
+                      <label placeholder="" class="form-control-label">Name and Surname</label>        <input type="text" id="contact_name" name="contact[name]" required="required" placeholder="" class="form-control" />  </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-group">
+                      <label placeholder="" class="form-control-label">Email</label>        <input type="email" id="contact_email" name="contact[email]" required="required" placeholder="" class="form-control" />  </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-group">
+                      <label placeholder="" class="form-control-label">Phone</label>        <input type="text" id="contact_phone" name="contact[phone]" required="required" placeholder="" class="form-control" />  </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-group">
+                      <label placeholder="" class="form-control-label">Address</label>        <input type="text" id="contact_address_street" name="contact[address][street]" required="required" placeholder="" class="form-control" />  </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-group">
+                      <label placeholder="" class="form-control-label">ZIP</label>        <input type="text" id="contact_address_postalCode" name="contact[address][postalCode]" required="required" placeholder="" class="form-control" />  </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-group">
+                      <label placeholder="" class="form-control-label">City</label>        <input type="text" id="contact_address_city" name="contact[address][city]" required="required" placeholder="" class="form-control" />  </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-group">
+                      <label placeholder="" class="form-control-label">State</label>        <input type="text" id="contact_address_state" name="contact[address][state]" placeholder="" class="form-control" />  </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-group">
+                      <label placeholder="" class="form-control-label">Country</label>      <select data-plugin="select2" id="contact_address_country" name="contact[address][country]" placeholder=""><option value="AF">Afghanistan</option><option value="AX">Åland Islands</option><option value="AL">Albania</option><option value="DZ">Algeria</option><option value="AS">American Samoa</option><option value="AD">Andorra</option><option value="AO">Angola</option><option value="AI">Anguilla</option><option value="AQ">Antarctica</option><option value="AG">Antigua &amp; Barbuda</option><option value="AR">Argentina</option><option value="AM">Armenia</option><option value="AW">Aruba</option><option value="AC">Ascension Island</option><option value="AU">Australia</option><option value="AT">Austria</option><option value="AZ">Azerbaijan</option><option value="BS">Bahamas</option><option value="BH">Bahrain</option><option value="BD">Bangladesh</option><option value="BB">Barbados</option><option value="BY">Belarus</option><option value="BE">Belgium</option><option value="BZ">Belize</option><option value="BJ">Benin</option><option value="BM">Bermuda</option><option value="BT">Bhutan</option><option value="BO">Bolivia</option><option value="BA">Bosnia &amp; Herzegovina</option><option value="BW">Botswana</option><option value="BR">Brazil</option><option value="IO">British Indian Ocean Territory</option><option value="VG">British Virgin Islands</option><option value="BN">Brunei</option><option value="BG">Bulgaria</option><option value="BF">Burkina Faso</option><option value="BI">Burundi</option><option value="KH">Cambodia</option><option value="CM">Cameroon</option><option value="CA">Canada</option><option value="IC">Canary Islands</option><option value="CV">Cape Verde</option><option value="BQ">Caribbean Netherlands</option><option value="KY">Cayman Islands</option><option value="CF">Central African Republic</option><option value="TD">Chad</option><option value="CL">Chile</option><option value="CN">China</option><option value="CX">Christmas Island</option><option value="CC">Cocos (Keeling) Islands</option><option value="CO">Colombia</option><option value="KM">Comoros</option><option value="CG">Congo - Brazzaville</option><option value="CD">Congo - Kinshasa</option><option value="CK">Cook Islands</option><option value="CR">Costa Rica</option><option value="CI">Côte d’Ivoire</option><option value="HR">Croatia</option><option value="CU">Cuba</option><option value="CW">Curaçao</option><option value="CY">Cyprus</option><option value="CZ">Czechia</option><option value="DK">Denmark</option><option value="DG">Diego Garcia</option><option value="DJ">Djibouti</option><option value="DM">Dominica</option><option value="DO">Dominican Republic</option><option value="EC">Ecuador</option><option value="EG">Egypt</option><option value="SV">El Salvador</option><option value="GQ">Equatorial Guinea</option><option value="ER">Eritrea</option><option value="EE">Estonia</option><option value="ET">Ethiopia</option><option value="FK">Falkland Islands</option><option value="FO">Faroe Islands</option><option value="FJ">Fiji</option><option value="FI">Finland</option><option value="FR">France</option><option value="GF">French Guiana</option><option value="PF">French Polynesia</option><option value="TF">French Southern Territories</option><option value="GA">Gabon</option><option value="GM">Gambia</option><option value="GE">Georgia</option><option value="DE">Germany</option><option value="GH">Ghana</option><option value="GI">Gibraltar</option><option value="GR">Greece</option><option value="GL">Greenland</option><option value="GD">Grenada</option><option value="GP">Guadeloupe</option><option value="GU">Guam</option><option value="GT">Guatemala</option><option value="GG">Guernsey</option><option value="GN">Guinea</option><option value="GW">Guinea-Bissau</option><option value="GY">Guyana</option><option value="HT">Haiti</option><option value="HN">Honduras</option><option value="HK">Hong Kong SAR China</option><option value="HU">Hungary</option><option value="IS">Iceland</option><option value="IN">India</option><option value="ID">Indonesia</option><option value="IR">Iran</option><option value="IQ">Iraq</option><option value="IE">Ireland</option><option value="IM">Isle of Man</option><option value="IL">Israel</option><option value="IT">Italy</option><option value="JM">Jamaica</option><option value="JP">Japan</option><option value="JE">Jersey</option><option value="JO">Jordan</option><option value="KZ">Kazakhstan</option><option value="KE">Kenya</option><option value="KI">Kiribati</option><option value="XK">Kosovo</option><option value="KW">Kuwait</option><option value="KG">Kyrgyzstan</option><option value="LA">Laos</option><option value="LV">Latvia</option><option value="LB">Lebanon</option><option value="LS">Lesotho</option><option value="LR">Liberia</option><option value="LY">Libya</option><option value="LI">Liechtenstein</option><option value="LT">Lithuania</option><option value="LU">Luxembourg</option><option value="MO">Macau SAR China</option><option value="MK">Macedonia</option><option value="MG">Madagascar</option><option value="MW">Malawi</option><option value="MY">Malaysia</option><option value="MV">Maldives</option><option value="ML">Mali</option><option value="MT">Malta</option><option value="MH">Marshall Islands</option><option value="MQ">Martinique</option><option value="MR">Mauritania</option><option value="MU">Mauritius</option><option value="YT">Mayotte</option><option value="MX">Mexico</option><option value="FM">Micronesia</option><option value="MD">Moldova</option><option value="MC">Monaco</option><option value="MN">Mongolia</option><option value="ME">Montenegro</option><option value="MS">Montserrat</option><option value="MA" selected="selected">United States</option><option value="MZ">Mozambique</option><option value="MM">Myanmar (Burma)</option><option value="NA">Namibia</option><option value="NR">Nauru</option><option value="NP">Nepal</option><option value="NL">Netherlands</option><option value="NC">New Caledonia</option><option value="NZ">New Zealand</option><option value="NI">Nicaragua</option><option value="NE">Niger</option><option value="NG">Nigeria</option><option value="NU">Niue</option><option value="NF">Norfolk Island</option><option value="KP">North Korea</option><option value="MP">Northern Mariana Islands</option><option value="NO">Norway</option><option value="OM">Oman</option><option value="PK">Pakistan</option><option value="PW">Palau</option><option value="PS">Palestinian Territories</option><option value="PA">Panama</option><option value="PG">Papua New Guinea</option><option value="PY">Paraguay</option><option value="PE">Peru</option><option value="PH">Philippines</option><option value="PN">Pitcairn Islands</option><option value="PL">Poland</option><option value="PT">Portugal</option><option value="XA">Pseudo-Accents</option><option value="XB">Pseudo-Bidi</option><option value="PR">Puerto Rico</option><option value="QA">Qatar</option><option value="RE">Réunion</option><option value="RO">Romania</option><option value="RU">Russia</option><option value="RW">Rwanda</option><option value="WS">Samoa</option><option value="SM">San Marino</option><option value="ST">São Tomé &amp; Príncipe</option><option value="SA">Saudi Arabia</option><option value="SN">Senegal</option><option value="RS">Serbia</option><option value="SC">Seychelles</option><option value="SL">Sierra Leone</option><option value="SG">Singapore</option><option value="SX">Sint Maarten</option><option value="SK">Slovakia</option><option value="SI">Slovenia</option><option value="SB">Solomon Islands</option><option value="SO">Somalia</option><option value="ZA">South Africa</option><option value="GS">South Georgia &amp; South Sandwich Islands</option><option value="KR">South Korea</option><option value="SS">South Sudan</option><option value="ES">Spain</option><option value="LK">Sri Lanka</option><option value="BL">St. Barthélemy</option><option value="SH">St. Helena</option><option value="KN">St. Kitts &amp; Nevis</option><option value="LC">St. Lucia</option><option value="MF">St. Martin</option><option value="PM">St. Pierre &amp; Miquelon</option><option value="VC">St. Vincent &amp; Grenadines</option><option value="SD">Sudan</option><option value="SR">Suriname</option><option value="SJ">Svalbard &amp; Jan Mayen</option><option value="SZ">Swaziland</option><option value="SE">Sweden</option><option value="CH">Switzerland</option><option value="SY">Syria</option><option value="TW">Taiwan</option><option value="TJ">Tajikistan</option><option value="TZ">Tanzania</option><option value="TH">Thailand</option><option value="TL">Timor-Leste</option><option value="TG">Togo</option><option value="TK">Tokelau</option><option value="TO">Tonga</option><option value="TT">Trinidad &amp; Tobago</option><option value="TA">Tristan da Cunha</option><option value="TN">Tunisia</option><option value="TR">Turkey</option><option value="TM">Turkmenistan</option><option value="TC">Turks &amp; Caicos Islands</option><option value="TV">Tuvalu</option><option value="UM">U.S. Outlying Islands</option><option value="VI">U.S. Virgin Islands</option><option value="UG">Uganda</option><option value="UA">Ukraine</option><option value="AE">United Arab Emirates</option><option value="GB">United Kingdom</option><option value="US">United States</option><option value="UY">Uruguay</option><option value="UZ">Uzbekistan</option><option value="VU">Vanuatu</option><option value="VA">Vatican City</option><option value="VE">Venezuela</option><option value="VN">Vietnam</option><option value="WF">Wallis &amp; Futuna</option><option value="EH">Western Sahara</option><option value="YE">Yemen</option><option value="ZM">Zambia</option><option value="ZW">Zimbabwe</option></select>  </div>
+                </div>
+                <div class="form-group form-group-last-child">
+                                                                <strong>Free shipping today!</strong>
+                                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- 04. Collpasible BLOCK -->
+    <div class="card th-card">
+        <div class="card-header th-card-header" role="tab" id="headingThree">
+            <h4 class="th-card-item-title">
+                <i class="material-icons">payment</i> 3. Confirm Order
+            </h4>
+        </div>
+        <div id="collapseThree" class="collapse show" role="tabpanel" aria-labelledby="headingThree" data-parent="#accordion">
+            <div class="card-body th-card-body">
+                                <div class="row">
+                    <div class="col-12">
+                        <div class="th-alert" id="card-errors" role="alert"></div>
+                        <button onclick="call_locker();"><i class="fa fa-credit-card"></i>Get Your Now Free</button>
+                    </div>
+                </div>
+                                
+                <!-- button amazon
+
+                                -->
+
+
+
+                <div class="th-text-center">
+                    <hr>
+                        <img src="https://assets.widitrade.com/assets/templates/5c371797263e5ceb2d2b2225/3party-securepayment.png" class="img-fluid">
+                            <hr>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end of Collpasible Blocks -->
+</div>
+
+
+<div class="col-12 col-md-5">
+    <div class="th-card th-box th-guaranteed">
+        <img src="https://assets.widitrade.com/assets/templates/5c371797263e5ceb2d2b2225/3party-securepayment.png" class="img-fluid">
+    </div>
+
+
+
+    <div class="th-card th-box th-sticky">
+
+        <!-- discountBar -->
+
+        <div class="fixed">
+            <h5 class="th-box-title">Offer valid now!</h5>
+        </div>
+
+
+        
+
+        <hr class="puntos">
+            <div class="row">
+                <div class="col-12 col-md-6 th-disclaimer-img">
+                    <img class="pb-3" src="https://assets.widitrade.com/assets/products/5e6f467aef286473cc756a12/product1.png" style="width:200px;">
+                </div>
+
+                <!-- discountBar -->
+
+
+                <div class="col-12 col-md-6 th-disclaimer-text">
+                    <p class="text1 th-disclaimer"></p>
+                    <p class="text2 th-disclaimer">Free shipping + 100% off!</p>
+                </div>
+
+
+                
+            </div>
+                        <div class="th-product-viewers">
+                <i class="material-icons">visibility</i>
+                <strong> 192 people are seeing this product now</strong>
+            </div>
+            </div>
+</div>
+</div>
+</div>
+</div><!-- #container -->
+
+<div style="min-height:40px;" class="clear"></div>
+
+
+
+<footer class="page-footer pt-4">
+
+
+    <div class="container">
+
+
+        <div class="row">
+            <div class="col-sm-12 text-center text-white first">
+
+                <!-- logo del client o -->
+                                
+                <!-- nombre del cliente -->
+                <!-- cambio por nuestro logo -->
+
+                    <div class="line-footer"></div>
+                            </div>
+
+
+
+            <div class="col-sm-12 links-footer d-flex">
+
+                                                                    
+            </div>
+
+
+
+        </div>
+
+
+        <div class="row mt-1 mb-2 midle">
+
+            
+                <div class="col-12 text-center">
+                    <img class="images-footer loading" src="https://assets.widitrade.com/assets/stores/5d399b41625da7d7e511b538/icreturns.png" data-was-processed="true">
+                    <img class="images-footer loading" src="https://assets.widitrade.com/assets/stores/5d399b41625da7d7e511b538/icsatisfaction.png" data-was-processed="true">
+                    <img class="images-footer loading" src="https://assets.widitrade.com/assets/stores/5d399b41625da7d7e511b538/icsecure.png" data-was-processed="true">
+                </div>
+
+                <div class="col-sm-4 mb-2 text-center text-white">
+                    <h3 class="nt text-white">USA</h3>
+                    <div class="line-footer"></div>
+                    <p class="mb-0"><a class="a-links text-white" href="tel:+13477081493">+1 (347) 7081493</a></p>
+                </div>
+
+                <div class="col-sm-4 mb-2 text-center text-white">
+                    <h3 class="nt text-white">UK</h3>
+                    <div class="line-footer"></div>
+                    <p class="mb-0"><a class="a-links text-white" href="tel:+442036086701">+ 44 (20) 36086701</a></p>
+                </div>
+
+                <div class="col-sm-4 mb-2 text-center text-white">
+                    <h3 class="nt text-white">SPAIN</h3>
+                    <div class="line-footer"></div>
+                    <p class="mb-0"><a class="a-links text-white" href="tel:+34911988049">+34 911988049</a></p>
+                </div>
+            
+        </div>
+
+
+
+
+        <div class="row">
+        </div>
+
+        <div class="row mt-1">
+            <div class="copy-footer text-center">
+
+                <p class="f-link text-white">
+
+                                            Copyrights &#169 <b>2020</b> All Rights Reserved by <b>
+                        <a class="a-links text-white" target="blanlk" href='https://ecomerzpro.net/' title='Home'>
+                            Ecomerzpro</b>
+                        </a>
+                                    </p>
+
+            </div>
+        </div>
+
+
+</footer>
+
+
+<!-- discountBar -->
+<div id="header-wrap" class="th-counterdown">
+    <div class="container clearfix text-center">
+        100% discount today.
+    </div>
+</div>
+
+        <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NGZ7Z7Q"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment-with-locales.min.js"></script>
+
+        <script src="https://www.gstatic.com/firebasejs/5.5.3/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.5.3/firebase-messaging.js"></script>
+                    <script src="https://browser.sentry-cdn.com/5.9.1/bundle.min.js" integrity="sha384-/x1aHz0nKRd6zVUazsV6CbQvjJvr6zQL2CHbQZf3yoLkezyEtZUpqUNnOLW9Nt3v" crossorigin="anonymous">
+            </script>
+            <script>
+                Sentry.init({ dsn: 'https://512946b58e444414882f63e1e84b6139@sentry.io/1833286' });
+            </script>
+        
+                    <script src="https://cdn.widitrade.com/bundles/fosjsrouting/js/router.js"></script>
+            <script src="https://cdn.widitrade.com/assets/js/routes/routes-4c608fd.js"></script>
+        
+                    <script src="https://js.stripe.com/v3/"></script>
+        
+        
+<script type="text/javascript" src="https://assets.widitrade.com/assets/templates/5c371797263e5ceb2d2b2225/jscombined.min.js"></script>
+<script type="text/javascript" src="https://assets.widitrade.com/assets/templates/5c371797263e5ceb2d2b2225/formutils.js"></script>
+<script type="text/javascript" src="https://assets.widitrade.com/assets/templates/5c371797263e5ceb2d2b2225/toastr.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/gasparesganga-jquery-loading-overlay@2.1.6/dist/loadingoverlay.min.js"></script>
+<script src="https://www.paypal.com/sdk/js?client-id=AQ6F9cnZ8KKEqxuhguGHxrYBi3s2h6NGGtUE8CRmIiQuC0Tmtp-NnRtoga-YC4GIyv9_MkHAZHFR5l28&amp;currency=MAD&amp;disable-funding=card"></script>
+<script>
+    $(function() {
+
+    $(document).keypress(
+        function(event){
+            if (event.which == '13') {
+                event.preventDefault();
+            }
+        });
+
+    $("#contact_address_country").select2({ width: '100%' });
+    $("select[data-type=variants]").each(function () {
+        if ($(this).length) {
+            $(this).select2({
+                width: '90%',
+                minimumResultsForSearch: Infinity
+            });
+        }
+    });
+
+    $('input[name=radio-group-1]').on("change", function() {
+        var $check = $(this);
+        $(".th-highlight-left").removeClass('th-highlight-left')
+        $(".th-highlight-right").removeClass('th-highlight-right')
+
+        $check.closest('.th-card-item').addClass('th-highlight-left');
+        $check.closest('.th-card-item').next().addClass('th-highlight-right');
+
+        var qty = parseInt($('input[name=radio-group-1]:checked').val());
+        var i;
+
+        for (i=1; i<=3; i++) {
+            if (i<=qty) {
+                $(".select-variants").eq(i-1).show();
+                $("select[data-type=variants][data-item="+i+"]").prop('required', true);
+                $("select[data-type=variants][data-item="+i+"]").each(function () {
+                    $('#formVariants').data('formValidation').addField($(this).attr('name'), {
+                        validators: {
+                            notEmpty: {
+                                message: "This\u0020field\u0020is\u0020required"
+                            }
+                        }
+                    });
+                });
+            } else {
+                $(".select-variants").eq(i-1).hide();
+                $("select[data-type=variants][data-item="+i+"]").prop('required', false);
+                $("select[data-type=variants][data-item="+i+"]").each(function () {
+                    $('#formVariants').data('formValidation').removeField($(this).attr('name'));
+                });
+            }
+        }
+    });
+
+
+    
+    var stripe = Stripe('pk_live_wr7QPJGEkZFjTw0JwUJlNohG');
+    var elements = stripe.elements();
+
+    var style = {
+        base: {
+            color: '#32325d',
+            lineHeight: '18px',
+            fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
+            fontSmoothing: 'antialiased',
+            fontSize: '16px',
+            '::placeholder': {
+                color: '#aab7c4'
+            }
+        },
+        invalid: {
+            color: '#fa755a',
+            iconColor: '#fa755a'
+        }
+    };
+
+    // Create an instance of the card Element
+    var card = elements.create('cardNumber', {style: style});
+    var cardExpiry = elements.create('cardExpiry', {style: style});
+    var cardCvc = elements.create('cardCvc', {style: style});
+
+    // Add an instance of the card Element into the `card-element` <div>
+    card.mount('#card-element');
+    cardExpiry.mount('#card-expiry');
+    cardCvc.mount('#card-cvc');
+
+    // Handle real-time validation errors from the card Element.
+    card.addEventListener('change', function(event) {
+        $(document).trigger('_paymentInfo');
+        var displayError = document.getElementById('card-errors');
+        if (event.error) {
+            displayError.textContent = event.error.message;
+        } else {
+            displayError.textContent = '';
+        }
+    });
+
+    cardExpiry.addEventListener('change', function(event) {
+        var displayError = document.getElementById('card-errors');
+        if (event.error) {
+            displayError.textContent = event.error.message;
+        } else {
+            displayError.textContent = '';
+        }
+    });
+
+    cardCvc.addEventListener('change', function(event) {
+        var displayError = document.getElementById('card-errors');
+        if (event.error) {
+            displayError.textContent = event.error.message;
+        } else {
+            displayError.textContent = '';
+        }
+    });
+
+    
+    var form = document.getElementById('payment-form');
+
+    // Create a source or display an error when the form is submitted.
+    $("#confirm-stripe-btn").on("click", function(e) {
+        e.preventDefault();
+        $("#paypal-btn").attr("disabled", true);
+        var l = Ladda.create( document.querySelector('#confirm-stripe-btn'));
+        l.start();
+        submitShoppingCart(l, function (result) {
+            if (result) {
+                stripe.createPaymentMethod('card', card).then(function (result) {
+                    if (result.error) {
+                        l.stop();
+                        $("#paypal-btn").attr("disabled", false);
+                        // Inform the user if there was an error
+                        var errorElement = document.getElementById('card-errors');
+                        errorElement.textContent = result.error.message;
+                    } else {
+
+                        var hiddenInput1 = document.createElement('input');
+                        hiddenInput1.setAttribute('type', 'hidden');
+                        hiddenInput1.setAttribute('name', 'payment_method_id');
+                        hiddenInput1.setAttribute('value', result.paymentMethod.id);
+                        form.appendChild(hiddenInput1);
+
+                        var hiddenInput2 = document.createElement('input');
+                        hiddenInput2.setAttribute('type', 'hidden');
+                        hiddenInput2.setAttribute('name', 'payment_way');
+                        hiddenInput2.setAttribute('value', 'stripe_intent');
+                        form.appendChild(hiddenInput2);
+
+                        const data = new FormData(form);
+
+                        // Otherwise send paymentMethod.id to your server (see Step 2)
+                        fetch(Routing.generate('store_checkout', {id: '5e6f467aef286473cc756a12'}), {
+                            method: 'POST',
+                            body: data
+                        }).then(function(result) {
+                            // Handle server response (see Step 3)
+                            result.json().then(function(json) {
+                                handleServerResponse(json);
+                            })
+                        });
+                    }
+                });
+            }
+        });
+    });
+
+    function handleServerResponse(response) {
+        if (response.error) {
+            if (response.error === 'already_ordered') {
+                window.location = Routing.generate('store_checkout_failed_already_ordered', {id: response.orderId});
+            } else if (response.error === 'issue') {
+                window.location = Routing.generate('store_checkout_failed_issue', {id: '1'});
+            } else {
+                window.location = Routing.generate('store_checkout_failed', {id: response.orderId});
+            }
+        } else if (response.requires_action) {
+            // Use Stripe.js to handle required card action
+            stripe.handleCardAction(
+                response.payment_intent_client_secret
+            ).then(function(result) {
+                if (result.error) {
+                    alert("Payment error");
+                    location.reload();
+                } else {
+
+                    // The card action has been handled
+                    // The PaymentIntent can be confirmed again on the server
+                    fetch(Routing.generate('store_checkout_stripe_charge_intent', {id: response.orderId, payment_intent_id: result.paymentIntent.id}), {
+                        method: 'POST'
+                    }).then(function(confirmResult) {
+                        return confirmResult.json();
+                    }).then(handleServerResponse);
+                }
+            });
+        } else {
+            window.location = Routing.generate('store_checkout_executed', {id: response.orderId});
+        }
+    }
+
+    $("#paypal-btn").on("click", function(e) {
+        e.preventDefault();
+        $("#confirm-stripe-btn").attr("disabled", true);
+        var l = Ladda.create(document.querySelector('#paypal-btn'));
+        l.start();
+        submitShoppingCart(l, function (result) {
+            if (result) {
+                var hiddenInput1 = document.createElement('input');
+                hiddenInput1.setAttribute('type', 'hidden');
+                hiddenInput1.setAttribute('name', 'payment_way');
+                hiddenInput1.setAttribute('value', 'paypal');
+                form.appendChild(hiddenInput1);
+
+                if ($("#shipping").is(':checked')) {
+                    var hiddenInputShipping = document.createElement('input');
+                    hiddenInputShipping.setAttribute('type', 'hidden');
+                    hiddenInputShipping.setAttribute('name', 'shipping');
+                    hiddenInputShipping.setAttribute('value', $("#shipping").data("type"));
+                    form.appendChild(hiddenInputShipping);
+                }
+
+                form.submit();
+            }
+        });
+    });
+
+    var getResourceImageName = function (item) {
+        var selectedValues = [];
+        $('*[data-type="variants"][data-item="'+item+'"]').each(function () {
+            if ($(this).data('image') === true) {
+                if ($(this).val() === '') {
+                    var id = $(this).attr('id');
+                    var lastVal = $('#' + id + ' option:last-child').val();
+                    if (lastVal === '') {
+                        selectedValues.push($(this).data('default-option').toLowerCase().replace('_', '-'));
+                    } else {
+                        selectedValues.push($('#' + id + ' option:last-child').val().toLowerCase().replace('_', '-'));
+                    }
+                } else {
+                    selectedValues.push($(this).val().toLowerCase().replace('_', '-'));
+                }
+            }
+        });
+
+        if (selectedValues.length > 0) {
+            return  selectedValues.join('-') + '.png';
+        }
+
+        return null;
+    }
+
+    var loadInitialImage = function () {
+        $('*[data-type="resource-image"]').each(function () {
+            var imageName = getResourceImageName($(this).data('item'));
+            if (imageName && imageName !== '.png') {
+                var src = $(this).data('path');
+                src = src.replace(new RegExp('[a-zA-Z\\-0-9]*.png'), imageName);
+                $(this).attr('src', src);
+            }
+        });
+    };
+
+    loadInitialImage();
+
+    
+    $('form').formValidation({
+        framework: "bootstrap",
+        icon: null,
+        excluded: [':disabled'],
+        err: {
+            clazz: 'text-help'
+        },
+        fields: {
+            "contact[name]": {
+                validators: {
+                    notEmpty: {
+                        message: "This\u0020field\u0020is\u0020required"
+                    }
+                }
+            },
+            "contact[email]": {
+                validators: {
+                    notEmpty: {
+                        message: "This\u0020field\u0020is\u0020required"
+                    },
+                    emailAddress: {
+                        message: "Invalid\u0020email\u0020address"
+                    },
+                    stringLength: {
+                        max: 60,
+                        message: "Max\u002060\u0020characters\u0020allowed"
+                    },
+                    regexp: {
+                        regexp: '^[^@\\s]+@([^@\\s]+\\.)+[^@\\s]+$',
+                        message: ' *'
+                    }
+                }
+            },
+            "contact[phone]": {
+                validators: {
+                    notEmpty: {
+                        message: "This\u0020field\u0020is\u0020required"
+                    },
+                    numeric: {
+                        message: "This\u0020field\u0020must\u0020be\u0020numeric\u0020without\u0020spaces"
+                    },
+                    stringLength: {
+                        max: 20,
+                        message: "Max\u002020\u0020characters\u0020allowed"
+                    }
+                }
+            },
+            "contact[vatNumber]": {
+                validators: {
+                    notEmpty: {
+                        message: "This\u0020field\u0020is\u0020required"
+                    }
+                }
+            },
+            "contact[address][street]": {
+                validators: {
+                    notEmpty: {
+                        message: "This\u0020field\u0020is\u0020required"
+                    }
+                }
+            },
+            "contact[address][number]": {
+                validators: {
+                    notEmpty: {
+                        message: "This\u0020field\u0020is\u0020required"
+                    },
+                    numeric: {
+                        message: "This\u0020field\u0020must\u0020be\u0020numeric\u0020without\u0020spaces"
+                    }
+                }
+            },
+            "contact[address][postalCode]": {
+                validators: {
+                    notEmpty: {
+                        message: "This\u0020field\u0020is\u0020required"
+                    },
+                    stringLength: {
+                        min: 2,
+                        message: "Minimum\u00202\u0020characters\u0020required"
+                    }
+                }
+            },
+            "contact[address][city]": {
+                validators: {
+                    notEmpty: {
+                        message: "This\u0020field\u0020is\u0020required"
+                    }
+                }
+            }
+        }
+    }).on('success.field.fv', function(e, data) {
+        $.ajax({
+            url: Routing.generate('store_checkout_track_form'),
+            type: 'POST',
+            data: $("form").serialize()
+        });
+    });
+
+    $(".summary").html($("input:radio[name ='radio-group-1']:checked").data("name"));
+    $("input:radio[name ='radio-group-1']").on("change", function () {
+        $(".summary").html($("input:radio[name ='radio-group-1']:checked").data("name"));
+    });
+
+    $("#contact_address_country").on("select2:select", function () {
+        location.href = addUrlParameter(location.href, 'country', $(this).val());
+    });
+
+    $("select[data-option]").on("change", function () {
+
+        var $select = $(this);
+        var imageSelector = $("#image"+ $select.data('item'));
+        var current = parseInt($select.data('option-item'));
+        var next = current + 1;
+        var $selectNext = $("select[data-item=" + $select.data('item') + "][data-option-item=" + next + "]");
+        if ($selectNext.length === 0) {
+            if (imageSelector.length) {
+                var imageName = getResourceImageName($select.data('item'));
+                if (imageName && imageName !== '.png') {
+                    var src = imageSelector.data('path');
+                    src = src.replace(new RegExp('[a-zA-Z\\-0-9]*.png'), imageName);
+                    imageSelector.attr('src', src);
+                }
+            }
+
+            return;
+        }
+
+        if ($select.val() === "") {
+            $selectNext.html('');
+            $selectNext.prepend("<option value='' selected='selected'>"+$selectNext.data('empty')+"</option>");
+            $selectNext.prop("disabled", true);
+            $selectNext.select2({
+                width: '280px'
+            });
+            $selectNext.trigger("change");
+            return;
+        }
+
+        var data = [];
+        for (var i=1; i<=current; i++) {
+            var $selectData = $("select[data-item=" + $select.data('item') + "][data-option-item=" + i + "]");
+            data.push({
+                product_option: $selectData.data('option'),
+                code: $selectData.val()
+            });
+        }
+
+        var url = Routing.generate('store_products_option_variants', {id: "5e6f467aef286473cc756a12", option: $selectNext.data('option')});
+        $.ajax({
+            url: url,
+            contentType: "application/json",
+            type: 'POST',
+            data: JSON.stringify(data),
+            success: function(response) {
+                $selectNext.html('');
+                                $selectNext.prop("disabled", false);
+                $selectNext.select2({
+                    data: response.items,
+                    width: '280px'
+                });
+                $selectNext.trigger("change");
+                if (imageSelector.length ) {
+                    var imageName = getResourceImageName($select.data('item'));
+                    if (imageName && imageName !== '.png') {
+                        var src = imageSelector.data('path');
+                        src = src.replace(new RegExp('[a-zA-Z\\-0-9]*.png'), imageName);
+                        imageSelector.attr('src', src);
+                    }
+                }
+            },
+            error: function () {
+
+            }
+        });
+    });
+
+    function submitShoppingCart(laddaBtn, result) {
+        var qty = parseInt($("input:radio[name ='radio-group-1']:checked").val());
+        var country = $("#contact_address_country").val();
+        var variants;
+
+                    variants = null;
+        
+        
+        $(form).data('formValidation').validate({focusInvalid: false});
+        if(!form.checkValidity() || !$(form).data('formValidation').isValid()) {
+            $('html, body').animate({
+                scrollTop: $('.has-error').first().offset().top
+            }, 1000);
+            laddaBtn.stop();
+            $("#paypal-btn").attr("disabled", false);
+            $("#confirm-stripe-btn").attr("disabled", false);
+            return;
+        }
+
+        ShoppingCart.setItems([]);
+        ShoppingCart.addItem('5e6f467aef286473cc756a12', qty, country, variants, null, getParameterByName('wtrd_code'));
+        AddBuyUpProductsToCart();
+
+        //submit cart
+        ShoppingCart.submitShoppingCart();
+        $(ShoppingCart).one("submitted", function () {
+            result(true);
+        });
+    }
+
+    var AddBuyUpProductsToCart = function() {
+                    ShoppingCart.removeItem('5d317e80ef28643b407413e2');
+            var buyUpEnabled = $("input[data-toggle=buyUpShow][value=5d317e80ef28643b407413e2]").is(':checked');
+            var buyUpQty = $("input:radio[name='buyproduct-5d317e80ef28643b407413e2']:checked").val();
+            if (buyUpEnabled) {
+                ShoppingCart.addItem('5d317e80ef28643b407413e2', buyUpQty, 'MA', [], null, getParameterByName('wtrd_code'));
+            }
+                    ShoppingCart.removeItem('5db6cafcef28647820614ca2');
+            var buyUpEnabled = $("input[data-toggle=buyUpShow][value=5db6cafcef28647820614ca2]").is(':checked');
+            var buyUpQty = $("input:radio[name='buyproduct-5db6cafcef28647820614ca2']:checked").val();
+            if (buyUpEnabled) {
+                ShoppingCart.addItem('5db6cafcef28647820614ca2', buyUpQty, 'MA', [], null, getParameterByName('wtrd_code'));
+            }
+            };
+
+    function ShoppingCartExpress() {
+        var qty = parseInt($("input:radio[name ='radio-group-1']:checked").val());
+        var variants;
+
+                variants = null;
+        
+        return variants;
+    }
+
+    $("#confirm-stripe-btn-payment-method").on("click", function () {
+        $("#rest-payment-steps").show();
+        $("#confirm-stripe-btn").trigger("click");
+    });
+
+    var PaypalExpress = function () {
+            var orderId = null;
+            var renderContainer = "#paypal-button-container";
+
+            if ($(renderContainer).length === 0) {
+                return;
+            }
+
+            paypal.Buttons({
+                style: {
+                    layout:  'horizontal',
+                    shape:   'rect',
+                    height:  45,
+                    tagline:  false,
+                    label:   'buynow'
+                },
+                // onInit is called when the button first renders
+                onInit: function(data, actions) {
+
+                    if (document.getElementById('formVariants')) {
+                        if (!document.getElementById('formVariants').checkValidity()) {
+                            actions.disable();
+                        }
+
+                        $("select[data-type=variants]").on("change", function() {
+                            if (document.getElementById('formVariants').checkValidity()) {
+                                actions.enable();
+                            }
+                        });
+                    }
+                },
+                onClick: function(data, actions) {
+                    if (document.getElementById('formVariants')) {
+                        if (document.getElementById('formVariants').checkValidity()) {
+                            return true;
+                        } else {
+                            $('#formVariants').data('formValidation').validate({focusInvalid: true});
+                            $('html, body').animate({
+                                scrollTop: $('.has-error').first().offset().top
+                            }, 1000);
+                            return false;
+                        }
+                    }
+                },
+                createOrder: function(data, actions) {
+                                                                                variants = ShoppingCartExpress();
+
+                    var qty = parseInt($("input:radio[name ='radio-group-1']:checked").val());
+                    var country = 'MA';
+
+                    ShoppingCart.setItems([]);
+                    ShoppingCart.addItem('5e6f467aef286473cc756a12', qty, country, variants, null, getParameterByName('wtrd_code'));
+                    AddBuyUpProductsToCart();
+
+                    var dataCart = {
+                        items: ShoppingCart.getItems(),
+                        clearShoppingCartOnAdd: true
+                    }
+
+                    var route = Routing.generate('store_checkout_paypal_express');
+                    if ($("#shipping").is(':checked')) {
+                        route = Routing.generate('store_checkout_paypal_express', {'shipping': $("#shipping").data("type")})
+                    }
+
+                    return fetch(Routing.generate('store_checkout_add_cart_items'), {
+                        credentials: 'include',
+                        method: 'POST',
+                        headers: {
+                            'content-type': 'application/json'
+                        },
+                        body: JSON.stringify(dataCart)
+                    }).then(function() {
+                        return fetch(route, {
+                            credentials: 'include',
+                            method: 'POST',
+                            headers: {
+                                'content-type': 'application/json'
+                            }
+                        }).then(function(res) {
+                            return res.json();
+                        }).then(function(data) {
+                            orderId = data.id;
+                            return data.id;
+                        });
+                    })
+                },
+                onApprove: function(data, actions) {
+                    $.LoadingOverlay("show", {
+                        image       : "",
+                        text        : "Processing\u0020purchase..."
+                    });
+                    // Capture the funds from the transaction
+                    return fetch(Routing.generate('store_checkout_paypal_express_capture', {id: data.orderID}), {
+                        credentials: 'include',
+                        method: 'POST',
+                        headers: {
+                            'content-type': 'application/json'
+                        }
+                    }).then(function(res) {
+                        return res.json();
+                    }).then(function(data) {
+                        window.location.href = data.redirect;
+                    });
+                }
+            }).render(renderContainer);
+    };
+
+    if (typeof paypal !== 'undefined') {
+        new PaypalExpress();
+    }
+
+    function getParameterByName(name, url) {
+        if (!url) url = window.location.href;
+        name = name.replace(/[\[\]]/g, "\\$&");
+        var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+            results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, " "));
+    }
+
+    $("select[data-option]").trigger("change");
+});
+    $(document).ready(function() {
+    $(".date-offer").html(moment().locale(window.navigator.language).add(1, 'h').format('L'));
+    var timer = new Timer();
+    timer.start({countdown: true, startValues: {minutes:30, seconds: 30}});
+    $('.crono').html(timer.getTimeValues().toString());
+    timer.addEventListener('secondsUpdated', function (e) {
+    $('.crono').html(timer.getTimeValues().toString());
+});
+
+    });
+</script>
+<script>
+    $('#contact_name').bind('keypress', function(e) {
+        console.log('-')
+    });    
+</script>
+
+<script>
+    $(document).ready(function() {
+        $("input[data-toggle=buyUpShow]").on("change", function () {
+            var $checkbox = $(this);
+            var productId = $checkbox.val();
+            if($checkbox.is(':checked')) {
+                $("#buyUp-"+productId).show();
+                $("#buyproduct-"+productId+"-1").prop('checked', true).trigger('change');
+            } else {
+                $("#buyUp-"+productId).hide();
+                ShoppingCart.removeItem(productId);
+            }
+        });
+
+                                                        
+                                                                                                            });
+</script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+
+<script>
+
+    toastr.options = {
+      "closeButton": true,
+      "debug": false,
+      "newestOnTop": false,
+      "progressBar": false,
+      "positionClass": "toast-bottom-center",
+      "preventDuplicates": false,
+      "onclick": null,
+      "showDuration": "1000",
+      "hideDuration": "4000",
+      "timeOut": "3000",
+      "extendedTimeOut": "4000",
+      "showEasing": "swing",
+      "hideEasing": "linear",
+      "showMethod": "fadeIn",
+      "hideMethod": "fadeOut"
+    }
+
+    var message = "";
+    
+
+            message = "You have not placed details in the address, is that correct??";
+       
+    
+    $("#contact_address_street").on("focusout", function(){
+        var value = $(this).val();
+        var reg = new RegExp('[0-9]+');
+        console.log(value);
+        console.log(value.match(reg));
+        if (value.match(reg) === null) {
+            console.log(1);
+            toastr["success"](message);
+        }
+    });
+    
+    
+    
+    
+</script>
+
+
+
+                <script>
+            var ShoppingCart = function () {
+
+    var items = [];
+
+    var clearShoppingCartonAdd = true;
+
+    var addItem = function (productId, qty, country, variants, shipping, discount) {
+        items.push({
+            productId: productId,
+            qty: qty,
+            country: country,
+            variants: variants,
+            shipping: shipping,
+            discount: discount
+        })
+    };
+
+    var addDetailedItem = function (productName, productId, price, currency, qty, country, variants, shipping, discount) {
+        items.push({
+            productId: productId,
+            productName: productName,
+            price: price,
+            currency: currency,
+            qty: qty,
+            country: country,
+            variants: variants,
+            shipping: shipping,
+            discount: discount
+        })
+    };
+
+    var removeItem = function (productId) {
+        items.forEach(function (item, index) {
+            if (item.productId == productId) {
+                items.splice(index, 1);
+            }
+        })
+    };
+
+    var submitShoppingCart = function () {
+        var data = {
+            items: items,
+            clearShoppingCartOnAdd: clearShoppingCartonAdd
+        }
+
+        $.ajax({
+            url: Routing.generate('store_checkout_add_cart_items'),
+            type: 'POST',
+            data: JSON.stringify(data),
+            contentType: 'application/json'
+        }).done(function () {
+            setItems([]);
+            $(ShoppingCart).trigger("submitted");
+        });
+    };
+
+    var setClearShoppingCartOnAdd = function (value) {
+        clearShoppingCartonAdd = value;
+    };
+
+    var getItems = function () {
+        return items;
+    }
+
+    var setItems = function (value) {
+        items = value;
+    }
+
+    var getTotalItems = function () {
+        return items.length;
+    }
+
+    var addItemAndSubmit = function (productId, qty, country, variants, shipping, discount) {
+        addItem(productId, qty, country, variants, shipping, discount);
+        submitShoppingCart();
+    }
+
+    return {
+        addItem: function (productId, qty, country, variants, shipping, discount) {
+            addItem(productId, qty, country, variants, shipping, discount);
+        },
+        addDetailedItem: function(productName, productId, price, currency, qty, country, variants, shipping, discount) {
+            addDetailedItem(productName, productId, price, currency, qty, country, variants, shipping, discount);
+        },
+        submitShoppingCart: function () {
+            submitShoppingCart();
+        },
+        setClearShoppingCartOnAdd: function (value) {
+            setClearShoppingCartOnAdd(value)
+        },
+        setItems: function (value) {
+            setItems(value);
+        },
+        getItems: function () {
+            return getItems();
+        },
+        addItemAndSubmit: function (productId, qty, country, variant, shipping, discount) {
+            addItemAndSubmit(productId, qty, country, variant, shipping, discount);
+        },
+        getTotalItems: function () {
+            return getTotalItems();
+        },
+        removeItem: function (productId) {
+            return removeItem(productId);
+        }
+    };
+}();
+        </script>
+
+                                    <img id="pixel-img" style="display: none;" src="https://store.ecomerzpro.net/pixel-click.gif?avd=5af593e1eeb3a7076b536e32&amp;offer=5e6f73a6ef28644f88702e92&amp;offerLanding=5e6f7411ef28645c370a0424&amp;offerPrelanding=5e78e67fef28646e793cd062&amp;attributionDays=30&amp;renderType=landing&amp;clickId=5e792d7a4e7c5b47a82d73e0&amp;chargeCost=0&amp;wtrd_offer_id=5e6f73a6ef28644f88702e92&amp;wtrd_offer_lids%5B0%5D=5e6f7411ef28645c370a0424&amp;wtrd_prev_pid=5e78e67fef28646e793cd062"/>
+                                                            <script>
+if (firebase.messaging.isSupported()) {
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyBxzpiC8j9WbIIIkCS0l0htJ6FRYaLNXxU",
+        authDomain: "widitrade.firebaseapp.com",
+        databaseURL: "https://widitrade.firebaseio.com",
+        projectId: "widitrade",
+        storageBucket: "widitrade.appspot.com",
+        messagingSenderId: "413616705809"
+    };
+
+    firebase.initializeApp(config);
+
+    const messaging = firebase.messaging();
+
+    messaging.getToken().then(function(currentToken) {
+        if (!currentToken) {
+            messaging
+                .requestPermission()
+                .then(function () {
+                    // get the token in the form of promise
+                    return messaging.getToken()
+                })
+                .then(function(token) {
+                    var url = '/customer/save/token-device/?token=__TOKEN__';
+                    url = url.replace('__TOKEN__', token);
+                    callAjax(url, function(){});
+                })
+                .catch(function (err) {
+                    console.log("Unable to get permission to notify.", err);
+                });
+        }
+    });
+
+    messaging.onMessage(function(payload) {
+        //TODO - Si queremos hacer una accion si la pagina esta en primer plano - Por ahora no
+    });
+
+    function callAjax(url, callback){
+        var xmlhttp;
+        // compatible with IE7+, Firefox, Chrome, Opera, Safari
+        xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function(){
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200){
+                callback(xmlhttp.responseText);
+            }
+        }
+        xmlhttp.open("GET", url, true);
+        xmlhttp.send();
+    }
+}
+</script>
+            <script>
+                $("#pixel-img").on("load", function () {
+                                        
+                    
+                                    });
+            </script>
+
+            <!-- Facebook Pixel Code -->
+            <script>
+                !function(f,b,e,v,n,t,s)
+                {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+                    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+                    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+                    n.queue=[];t=b.createElement(e);t.async=!0;
+                    t.src=v;s=b.getElementsByTagName(e)[0];
+                    s.parentNode.insertBefore(t,s)}(window,document,'script',
+                    'https://connect.facebook.net/en_US/fbevents.js');
+                fbq('init', '551800715557688');
+                fbq('track', 'PageView');
+            </script>
+            <noscript>
+                <img height="1" width="1"
+                     src="https://www.facebook.com/tr?id=551800715557688&amp;ev=PageView%20%20%20%20%20%20%20%20&amp;noscript=1"/>
+            </noscript>
+            <!-- End Facebook Pixel Code -->
+            <script>
+                fbq('track', 'ViewContent', {
+                    content_name: 'Light Sanitizer',
+                    content_ids: '5e6f73a6ef28644f88702e92',
+                    content_type: 'landing',
+                    publisher_id: ''
+                });
+            </script>
+            <script>
+                var url = document.URL;
+                console.log(url);
+                var paramReg = new RegExp("[&]wtrd_extId=[A-Za-z0-9,-/:]+");
+                if (url.match(paramReg)) {
+                    var value = url.match(paramReg)[0].split('=')[1];
+                    url = url.replace(paramReg, '&wtrd_extId2=' + value);
+                }
+                window.history.replaceState( {} , '', url);
+            </script>
+            <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"de79bc54f6","applicationID":"117809743","transactionName":"Y1VXNxcEWEQCWhZQClofdhYWEVlaTEoWVhdRb10MCAA=","queueTime":0,"applicationTime":70,"atts":"TxJUQV8eS0o=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>
